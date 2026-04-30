@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Escribe tu comentario</h3>
+    <form>
+        <input type="text" id="comentario"/>
+        <button type="submit" id="btn-enviar">Enviar</button>
+    </form>
+    <h3>Comentarios</h3>
+    <ul id="lista-comentarios">
+
+    </ul>
+    <script>
+        const formulario = document.querySelector("form");
+        let listaComentarios = document.getElementById("lista-comentarios");
+
+        formulario.addEventListener("submit", function(event){
+            event.preventDefault();
+            let comentario = document.getElementById("comentario");
+            listaComentarios.innerHTML += `<li>${comentario.value}</li>`;
+            comentario.value = "";
+        })
+    </script>
+</body>
+</html>
